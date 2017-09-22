@@ -1,9 +1,10 @@
 /*!
  * d3pie
  * @author Ben Keen
- * @version 0.1.9
- * @date June 17th, 2015
- * @repo http://github.com/benkeen/d3pie
+ * @version 0.2.1.20170922 (patched by Alexander Moisseev)
+ * @date 2017-09-22
+ * @repo https://github.com/moisseev/d3pie/tree/patched
+ * @license MIT
  */
 
 // UMD pattern from https://github.com/umdjs/umd/blob/master/returnExports.js
@@ -1013,7 +1014,7 @@ var labels = {
 			.attr("fill", "none")
 			.style("opacity", function(d, i) {
 				var percentage = pie.options.labels.outer.hideWhenLessThanPercentage;
-				var isHidden = (percentage !== null && d.percentage < percentage) || pie.options.data.content[i].label === "";
+				var isHidden = (percentage !== null && pie.options.data.content[i].percentage < percentage) || pie.options.data.content[i].label === "";
 				return isHidden ? 0 : 1;
 			});
 	},
@@ -1222,7 +1223,7 @@ var labels = {
 
 	isLabelHidden: function(pie, index) {
 		var percentage = pie.options.labels.outer.hideWhenLessThanPercentage;
-		return (percentage !== null && d.percentage < percentage) || pie.options.data.content[index].label === "";
+		return (percentage !== null && pie.options.data.content[index].percentage < percentage) || pie.options.data.content[index].label === "";
 	},
 
 	// does a little math to shift a label into a new position based on the last properly placed one
