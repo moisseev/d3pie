@@ -1,8 +1,8 @@
 /*!
  * d3pie
  * @author Ben Keen
- * @version 0.2.1.20170922 (patched by Alexander Moisseev)
- * @date 2017-09-22
+ * @version 0.2.1.20170923 (patched by Alexander Moisseev)
+ * @date 2017-09-23
  * @repo https://github.com/moisseev/d3pie/tree/patched
  * @license MIT
  */
